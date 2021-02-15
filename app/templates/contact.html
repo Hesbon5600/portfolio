@@ -1,0 +1,141 @@
+{%load static%}
+{% load icon %}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=0">
+  <meta name="description" content="Lewis - Creative Portfolio HTML Template">
+  <meta name="author" content="Paul, Logan Cee">
+  <title>Hesbon - Portfolio | Contact</title>
+
+  <link href="{%static 'css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{%static 'css/animsition.min.css' %}" rel="stylesheet">
+  <link href="{%static 'css/owl.carousel.min.css' %}" rel="stylesheet">
+  <link href="{%static 'css/owl.theme.default.min.css' %}" rel="stylesheet">
+  <link href="{%static 'css/socicon.css' %}" rel="stylesheet">
+  <link href="{%static 'css/ionicons.min.css' %}" rel="stylesheet">
+  <link href="{%static 'css/animate.min.css' %}" rel="stylesheet">
+  <link href="{%static 'css/jquery.fancybox.min.css' %}" rel="stylesheet">
+
+  <link href="{%static 'css/style.css' %}" rel="stylesheet">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="{% static 'manifest/apple-touch-icon.png' %}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{% static 'manifest/favicon-32x32.png' %}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{% static 'manifest/favicon-16x16.png' %}">
+  <link rel="manifest" href="{% static 'manifest/manifest.json' %}">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+</head>
+
+<body class="theme-orange fixed-footer fixed-footer-lg">
+  <div class="animsition">
+    <div class="wrapper parallax-start">
+      {%include "_nav.html"%}
+
+      <div class="section">
+        <div class="section-item">
+          <div class="container">
+            <div class="mt50 mb60">
+              <div class="rounded-logo rounded-logo-md mb90 wow fadeInUp">
+                <svg viewBox="0 0 200 200">
+                  <path id="textPath" d="M 85,0 A 85,85 0 0 1 -85,0 A 85,85 0 0 1 85,0" transform="translate(100,100)"
+                    fill="none" stroke-width="0"></path>
+                  <g font-size="20px">
+                    <text text-anchor="start">
+                      <textPath xlink:href="#textPath" startOffset="0%">&nbsp;• &nbsp; hesbon maiyo &nbsp; • software
+                        engineer</textPath>
+                    </text>
+                  </g>
+                </svg>
+                <div class="logo">HM</div>
+              </div>
+              <h1 class="h1-lg mb20 wow fadeInUp" data-wow-delay=".2s"><a href="tel:+254727737299"
+                  class="phone-link">+2547 2773 7299</a></h1>
+              <h2 class="fs42 wow fadeInUp" data-wow-delay=".4s"><a target="_blank"
+                  href="mailto:hesbonkiptoo5600@gmail.com" class="mail-link"><span
+                    class="__cf_email__">hesbonkiptoo5600@gmail.com</span></a></h2>
+              <h3 class="fs30 text-grey mt90 wow fadeInUp" data-wow-delay=".6s">Nairobi, Kenya</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid">
+        <div class="image mask-skew wow fadeIn" data-wow-offset="150" data-wow-duration="0.2s" data-wow-delay=".3s">
+          <div class="mask wow slideInLeft" data-wow-offset="150" data-wow-duration="1.2s" data-wow-delay=".3s">
+            <div class="inside"></div>
+          </div>
+          <img src="{%static 'img/pic161.jpg'%}" alt="" class="img-fluid" />
+        </div>
+      </div>
+      <div class="section">
+        <div class="section-item">
+          <div class="container wow fadeInUp" data-wow-delay=".2s">
+            <h3 class="fs36 mb120">Get In Touch</h3>
+            <form action="#" class="text-left">
+              <div class="row">
+                <div class="col-sm-4 mb30">
+                  <label class="label-custom">Name</label>
+                  <input type="text" class="form-control form-control-custom" placeholder="Your name" value="" />
+                </div>
+                <div class="col-sm-4 mb30">
+                  <label class="label-custom">Email</label>
+                  <input type="text" class="form-control form-control-custom" placeholder="Your Email Address" />
+                </div>
+                <div class="col-sm-4 mb30">
+                  <label class="label-custom">subject (obtional)</label>
+                  <input type="text" class="form-control form-control-custom" placeholder="Title of email" />
+                </div>
+                <div class="col-sm-12 mb30">
+                  <label class="label-custom">message</label>
+                  <textarea rows="9" cols="30" class="form-control form-control-custom"
+                    placeholder="Write your message here"></textarea>
+                </div>
+              </div>
+              <div class="mt40 text-center"><button class="btn btn-link fs18 text-black text-underline">send
+                  message</button></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    {%include "_footer.html"%}
+
+  </div>
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script>window.jQuery || document.write(`<script src="{%static 'js/jquery.min.js' %}"><\/script>`)</script>
+  <script src="{%static 'js/smoothscroll.js' %}"></script>
+  <script src="{%static 'js/popper.min.js' %}"></script>
+  <script src="{%static 'js/bootstrap.min.js' %}"></script>
+  <script src="{%static 'js/animsition.min.js' %}"></script>
+  <script src="{%static 'js/owl.carousel.min.js' %}"></script>
+  <script src="{%static 'js/wow.min.js' %}"></script>
+  <script src="{%static 'js/jquery.pagepiling.min.js' %}"></script>
+  <script src="{%static 'js/isotope.pkgd.min.js' %}"></script>
+  <script src="{%static 'js/jquery.fancybox.min.js' %}"></script>
+  <script src="{%static 'js/TweenMax.min.js' %}"></script>
+  <script src="{%static 'js/ScrollMagic.min.js' %}"></script>
+  <script src="{%static 'js/animation.gsap.min.js' %}"></script>
+  <script src="{%static 'js/jquery.viewport.js' %}"></script>
+  <script src="{%static 'js/jquery.countdown.min.js' %}"></script>
+  <script src="{%static 'js/script.js' %}"></script>
+  <script>
+    $(document).ready(function () {
+      // init controller
+      var controller = new ScrollMagic.Controller();
+
+      // build scenes
+      new ScrollMagic.Scene({ triggerElement: '.parallax-start', triggerHook: 0, duration: '100%' })
+        .setTween('.full-image-dark', { backgroundPosition: '50% 100%', ease: Linear.easeNone })
+        .addTo(controller);
+
+
+    });
+  </script>
+</body>
+
+<!-- Mirrored from paul-themes.com/html/lewis/demo/contact.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Feb 2021 15:29:37 GMT -->
+
+</html>

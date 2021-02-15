@@ -1,0 +1,234 @@
+{%load static%}
+{% load icon %}
+<!doctype html>
+<html lang="en">
+
+<!-- Mirrored from paul-themes.com/html/lewis/demo/single-project-mobile-app.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Feb 2021 15:14:39 GMT -->
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=0">
+  <meta name="description" content="Lewis - Creative Portfolio HTML Template">
+  <meta name="author" content="Paul, Logan Cee">
+  <title>Hesbon - Portfolio | {{data.name}}</title>
+
+  <link href="{%static 'css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{%static 'css/animsition.min.css' %}" rel="stylesheet">
+  <link href="{%static 'css/owl.carousel.min.css' %}" rel="stylesheet">
+  <link href="{%static 'css/owl.theme.default.min.css' %}" rel="stylesheet">
+  <link href="{%static 'css/socicon.css' %}" rel="stylesheet">
+  <link href="{%static 'css/ionicons.min.css' %}" rel="stylesheet">
+  <link href="{%static 'css/animate.min.css' %}" rel="stylesheet">
+  <link href="{%static 'css/jquery.fancybox.min.css' %}" rel="stylesheet">
+
+  <link href="{%static 'css/style.css' %}" rel="stylesheet">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="{% static 'manifest/apple-touch-icon.png' %}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{% static 'manifest/favicon-32x32.png' %}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{% static 'manifest/favicon-16x16.png' %}">
+  <link rel="manifest" href="{% static 'manifest/manifest.json' %}">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+</head>
+
+<body class="theme-orange fixed-footer fixed-footer-lg">
+  <div class="animsition">
+    <div class="wrapper">
+      {%include "_nav.html"%}
+      <div class="project-card-mobile">
+        <div class="section">
+          <div class="section-item">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-4 col-sm-6 text-left">
+                  <h1 class="font-libre fs48 lh-sm"><strong>{{data.name}}</strong></h1>
+                  <ul class="social mt100">
+                    <li><a target="_blank" href="{{data.url}}" class="text-grey-light">
+                        {% icon "external-link"%}
+                      </a></li>
+                  </ul>
+                </div>
+                <div class="col-lg-2 d-none d-lg-block"></div>
+                <div class="col-sm-6 text-left">
+                  <div class="row mt-4">
+                    <div class="col-6">
+                      <div class="project-info-item">
+                        <div class="project-info-title">client</div>
+                        <div class="project-info-descr">{{data.client}}</div>
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="project-info-item">
+                        <div class="project-info-title">team size</div>
+                        <div class="project-info-descr">{{data.team_size}} Software Engineers</div>
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="project-info-item">
+                        <div class="project-info-title">services</div>
+                        <div class="project-info-descr">{%for category in data.category.all %}{% icon "chevrons-right" %} {{category.name}} <br/>{%endfor%}</div>
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="project-info-item">
+                        <div class="project-info-title">date completed</div>
+                        <div class="project-info-descr">{%if data.ongoing%}Ongoing{%endif%}{%if not data.ongoing%}{{data.completion_date}}{%endif%}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="section-item">
+            <div class="project-card-promo full-height" style="background-image: url({%static 'img/'|add:data.background_image_url %});">
+            </div>
+          </div>
+          <div class="section-item text-left">
+            <div class="container">
+              <div class="lead lead-lg">{{data.description|safe}}</div>
+            </div>
+          </div>
+          <div class="section-item">
+            <div class="container">
+              <hr>
+            </div>
+          </div>
+          <div class="section-item text-left">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-2">
+                  <h2 class="mb-5 font-libre fs30"><strong>Tech <br/> Stacks</strong></h2>
+                </div>
+                <div class="col-md-10 pl-2">
+                  <div class="lh-lg text-grey">
+                    <ul class="base-list">
+                      {%for tech in data.technologies%}
+                      <li class="wow fadeInUp" data-wow-delay=".2s" data-wow-duration=".5s" data-wow-offset="50">
+                        {{tech}}
+                      </li>
+                      {%endfor%}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="section-item text-left">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-2">
+                  <h2 class="mb-5 font-libre fs30"><strong>My Role</strong></h2>
+                </div>
+                <div class="col-md-10">
+                  <div class="lh-lg text-grey">
+                    <ul class="base-list">
+                      {%for role in data.roles%}
+                      <li class="wow fadeInUp" data-wow-delay=".2s" data-wow-duration=".5s" data-wow-offset="50">
+                        {{role}}
+                      </li>
+                      {%endfor%}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {%if data.success%}
+          <div class="section-item">
+            <div class="container">
+              <hr>
+            </div>
+          </div>
+          <div class="section-item text-left">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-2">
+                  <h2 class="mb-5 font-libre fs30"><strong>Project <br /> Success</strong></h2>
+                </div>
+                <div class="col-md-10">
+                  <div class="lh-lg text-grey">
+                    <ul class="base-list">
+                      {%for success in data.success%}
+                      <li class="wow fadeInUp" data-wow-delay=".2s" data-wow-duration=".5s" data-wow-offset="50">
+                        {{success}}
+                      </li>
+                      {%endfor%}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {%endif%}
+          <div class="section-item">
+            <div class="container">
+              <hr>
+            </div>
+          </div>
+          <div class="section-item">
+            <div class="container">
+              <button class="like-btn"><i class="icon ion-heart"></i></button>
+              <div class="text-grey mt-3">28 Liked</div>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="next-project">
+          <div class="container">
+            <div class="row">
+              <div class="col-6">
+                <a href="single-project-web-design.html" class="prev-project-link">
+                  <div class="next-title">Previous</div>
+                  <h3 class="font-libre">Route Money</h3>
+                  <div class="next-project-photo" style="background-image: url({%static 'img/piling-project4.jpg' %});">
+                  </div>
+                </a>
+              </div>
+              <div class="col-6">
+                <a href="single-project-photography.html" class="next-project-link">
+                  <div class="next-title">Next</div>
+                  <h3 class="font-libre">Vitea</h3>
+                  <div class="next-project-photo" style="background-image: url({%static 'img/pic30.jpg' %});"></div>
+                </a>
+              </div>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </div>
+    {%include "_footer.html"%}
+
+  </div>
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script>window.jQuery || document.write(`<script src="{%static 'js/jquery.min.js' %}"><\/script>`)</script>
+  <script src="{%static 'js/smoothscroll.js'%}"></script>
+  <script src="{%static 'js/popper.min.js'%}"></script>
+  <script src="{%static 'js/bootstrap.min.js'%}"></script>
+  <script src="{%static 'js/animsition.min.js'%}"></script>
+  <script src="{%static 'js/owl.carousel.min.js'%}"></script>
+  <script src="{%static 'js/wow.min.js'%}"></script>
+  <script src="{%static 'js/jquery.pagepiling.min.js'%}"></script>
+  <script src="{%static 'js/isotope.pkgd.min.js'%}"></script>
+  <script src="{%static 'js/jquery.fancybox.min.js'%}"></script>
+  <script src="{%static 'js/TweenMax.min.js'%}"></script>
+  <script src="{%static 'js/ScrollMagic.min.js'%}"></script>
+  <script src="{%static 'js/animation.gsap.min.js'%}"></script>
+  <script src="{%static 'js/jquery.viewport.js'%}"></script>
+  <script src="{%static 'js/jquery.countdown.min.js'%}"></script>
+  <script src="{%static 'js/script.js'%}"></script>
+  <script>
+    $(document).ready(function () {
+      // init controller
+      var controller = new ScrollMagic.Controller();
+
+      // build scenes
+      new ScrollMagic.Scene({ triggerElement: '.project-card-mobile', triggerHook: 0, duration: $('.project-card-promo').outerHeight() + $('.project-card-promo').offset().top })
+        .setTween('.project-card-promo', { backgroundPosition: '50% 80%', ease: Linear.easeNone })
+        .addTo(controller);
+
+
+    });
+  </script>
+</body>
+
+</html>

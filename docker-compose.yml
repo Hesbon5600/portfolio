@@ -1,0 +1,63 @@
+version: "3.7"
+services:
+  database:
+    restart: always
+    image: postgres:10.1
+    environment:
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_DB=${DB_NAME}
+    volumes:
+      - ./portfolio-db:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    expose:
+      - "5432"
+    networks:
+      - back-end
+  app:
+    restart: always
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    ports:
+      - "8000:8000"
+    image: portfolio-app
+    volumes:
+      - .:/portfolio-app
+      - ./staticfiles:/portfolio-app/staticfiles/
+    depends_on:
+      - database
+    entrypoint: ["/bin/bash", "-c", "/portfolio-app/docker/start_api.sh"]
+    stdin_open: true
+    tty: true
+    networks:
+      - back-end
+    environment:
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_NAME=${DB_NAME}
+      - DB_HOST=database
+      - SECRET_KEY=${SECRET_KEY}
+      - DEBUG=${DEBUG}
+      - ALLOWED_HOST=${ALLOWED_HOST}
+
+  proxy:
+    image: portfolio-nginx
+    build:
+      context: .
+      dockerfile: nginx/nginx.Dockerfile
+    ports:
+      - "80:80"
+      - "443:443"
+    networks:
+      - back-end
+    depends_on:
+      - app
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./staticfiles:/portfolio-app/static/
+      - /etc/letsencrypt/:/etc/letsencrypt/
+    restart: always
+networks:
+  back-end:

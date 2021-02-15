@@ -1,0 +1,75 @@
+<header id="header" class="header header-fixed">
+    <div class="container-fluid clearfix">
+        <div class="brand">
+            <a {% if request.path == '/' %} href="#Home" {%endif%} {% if request.path != '/' %} href="{%url 'home'%}" {%endif%} >
+                <div class="brand-name text-texture">HM</div>
+                <div class="brand-text">Software<br /> Engineer</div>
+            </a>
+        </div>
+        <button class="nav-toggle-btn a-nav-toggle">
+            <span class="nav-toggle-title">Menu</span>
+            <span class="nav-toggle nav-toggle-sm">
+                <span class="stick stick-1"></span>
+                <span class="stick stick-2"></span>
+                <span class="stick stick-3"></span>
+            </span>
+        </button>
+        <div class="header-content d-none d-md-block">
+            <div class="header-contacts">
+                <div class="header-contact-item"><a href="tel:+254727737299" class="phone-link">+2547 2773
+                        7299</a></div>
+                <div class="header-contact-divider">/</div>
+                <div class="header-contact-item"><a target="_blank" href="mailto:hesbonkiptoo5600@gmail.com"
+                        class="mail-link"><span class="__cf_email__">hesbonkiptoo5600@gmail.com</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="hide-menu a-nav-toggle"></div>
+    <div class="menu">
+        <div class="menu-lang">
+        </div>
+        <div class="menu-main" id="accordion">
+            <ul>
+                <li {% if request.path == '/' %} class="active"{%endif%} ><a data-text="Home" data-toggle="collapse" href="#menuHome" role="button"
+                    {% if request.path == '/' %} aria-expanded="true" {%endif%} aria-controls="menuHome">Home</a>
+                    <div  class="collapse" id="menuHome" data-parent="#accordion">
+                        <ul>
+                            <li><a {% if request.path == '/' %} href="#Home" {%endif%} {% if request.path != '/' %} href="/#Home" {%endif%} data-animsition-out-class="fade-out"
+                                    data-text="Intro">Intro</a></li>
+                            <li><a {% if request.path == '/' %} href="#Services" {%endif%} {% if request.path != '/' %} href="/#Services" {%endif%}
+                                    data-animsition-out-class="fade-out" data-text="Services">Services</a>
+                            </li>
+                            <li><a {% if request.path == '/' %} href="#Projects" {%endif%} {% if request.path != '/' %} href="/#Projects" {%endif%} data-animsition-out-class="fade-out"
+                                data-text="Projects">Projects</a>
+                            </li>
+                            <li><a {% if request.path == '/' %} href="#Contacts" {%endif%} {% if request.path != '/' %} href="/#Projects" {%endif%} data-animsition-out-class="fade-out"
+                                data-text="Contact Me">Contact Me</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li {% if request.path == '/about' %} class="active"{%endif%}><a href="{%url 'about'%}" class="animsition-link" data-animsition-out-class="fade-out"
+                        data-text="About">About</a></li>
+                <li {% if request.path == '/projects' %} class="active"{%endif%}><a href="{%url 'projects'%}" class="animsition-link" data-animsition-out-class="fade-out"
+                        data-text="Projects">Projects</a></li>
+                <li {% if request.path == '/work-history' %} class="active"{%endif%}><a href="{%url 'work-history'%}" class="animsition-link" data-animsition-out-class="fade-out"
+                        data-text="Work History">Work History</a></li>
+                <li {% if request.path == '/contact' %} class="active"{%endif%}><a href="{%url 'contact'%}" class="animsition-link" data-animsition-out-class="fade-out"
+                        data-text="Contact">Contact</a></li>
+            </ul>
+        </div>
+        <div class="menu-footer">
+            <ul class="social social-rounded">
+                <li><a target="_blank" href="https://github.com/Hesbon5600"><i class="socicon-github"></i></a></li>
+                <li><a target="_blank" href="https://www.linkedin.com/in/hesbon-kiptoo-maiyo/"><i class="socicon-linkedin"></i></a></li>
+                <li><a target="_blank" href="mailto:hesbonkiptoo5600@gmail.com"><i class="socicon-mail"></i></a></li>
+              </ul>
+            <div class="menu-copyright">&copy;
+                <script>document.write(new Date().getFullYear())</script> <strong>Hesbon</strong>. All Rights
+                Reserved.<br />
+                Developed by
+                <strong>Hesbon</strong>
+            </div>
+        </div>
+    </div>
+</header>
