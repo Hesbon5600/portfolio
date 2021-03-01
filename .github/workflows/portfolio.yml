@@ -1,0 +1,39 @@
+name: My Portfolio
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - "*"
+jobs:
+
+  build-and-deploy:
+    name: Deploy App
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - uses: actions/checkout@v2
+      - name: Executing remote  command
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
+          script: |
+            cd ~/portfolio
+            git fetch
+            git reset --hard origin/main
+            export DB_USER=${{ secrets.DB_USER}}
+            export DB_PASSWORD=${{ secrets.DB_PASSWORD}}
+            export DB_NAME=${{ secrets.DB_NAME}}
+            export SECRET_KEY='${{ secrets.SECRET_KEY}}'
+            export ALLOWED_HOST='${{ secrets.ALLOWED_HOST}}'
+            export EMAIL_HOST='${{ secrets.EMAIL_HOST}}'
+            export EMAIL_HOST_USER='${{ secrets.EMAIL_HOST_USER}}'
+            export EMAIL_HOST_PASSWORD='${{ secrets.EMAIL_HOST_PASSWORD}}'
+            export TO_EMAIL='${{ secrets.TO_EMAIL}}'
+            docker-compose build
+            docker-compose up -d

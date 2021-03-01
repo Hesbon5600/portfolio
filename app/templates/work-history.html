@@ -1,0 +1,191 @@
+{%load static%}
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=0">
+  <meta name="description" content="Hesbon Kiptoo Maiyo Portfolio">
+  <meta name="author" content="Hesbon Kiptoo Maiyo ">
+  <title>Hesbon | Portfolio - Work History</title>
+
+  <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'css/animsition.min.css' %}" rel="stylesheet">
+  <link href="{% static 'css/owl.carousel.min.css' %}" rel="stylesheet">
+  <link href="{% static 'css/owl.theme.default.min.css' %}" rel="stylesheet">
+  <link href="{% static 'css/socicon.css' %}" rel="stylesheet">
+  <link href="{% static 'css/ionicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'css/animate.min.css' %}" rel="stylesheet">
+  <link href="{% static 'css/jquery.fancybox.min.css' %}" rel="stylesheet">
+
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="{% static 'manifest/apple-touch-icon.png' %}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{% static 'manifest/favicon-32x32.png' %}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{% static 'manifest/favicon-16x16.png' %}">
+  <link rel="manifest" href="{% static 'manifest/manifest.json' %}">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  {%include "_google-a.html"%}
+</head>
+
+<body class="theme-orange fixed-footer fixed-footer-lg">
+  <div class="animsition">
+    <div class="wrapper parallax-start">
+      {%include "_nav.html"%}
+      <div class="section">
+        <!-- <div class="section-item">
+          <div class="container">
+            <div class="mt70 text-left">
+              <div class="row">
+                <div class="col-md-10">
+                  <h1 class="fs60 mb20 font-libre text-uppercase wow fadeInUp"><strong>We create progress<br /> by
+                      design and develope crafting digital experiences.</strong></h1>
+                </div>
+              </div>
+              <div class="fs20 lh-lg2 text-grey mt60 wow fadeInUp" data-wow-delay=".2s">Our team is proficient in an
+                array of services that can help elevate and empower your company or organization.<br /> We work with you
+                to build comprehensive, thoughtful, and purpose-driven identities and experiences. Let’s talk about how
+                our services can add value to your company.</div>
+            </div>
+          </div>
+        </div> -->
+        <div class="section-item text-left">
+          <div class="container">
+            <div class="service-promo-list">
+              {%for client in data%}
+              <div class="service-promo-item row no-gutters wow {{client.fade_style}}" data-wow-delay=".2s"
+                data-wow-offset="150">
+                <div class="col-sm-4 {{client.description_style}} service-promo-item-photo"
+                  style="background-image: url({%static 'img/'|add:client.background_image_url%});">
+                  <img src="{%static 'img/'|add:client.background_image_url%}" alt="" class="img-fluid d-sm-none">
+                </div>
+                <div class="col-sm-8 service-promo-item-detail">
+                  <div class="service-promo-item-title">{{client.name}}</div>
+                  <div class="section-item-title-xs section-item-title-xs-narrow mb35"><strong>{{client.start_date}} -
+                      {%if client.end_date%}{{client.end_date}}{%endif%}
+                      {%if not client.end_date%}Present{%endif%}</strong></div>
+                  <div class="fs18 text-grey">
+                    {{client.description | safe}}
+                  </div>
+                  <div class="row fs20">
+                    <div class="col-lg-6 mt70">
+                      <div class="section-item-title-xs section-item-title-xs-narrow mb35"><strong>skills</strong></div>
+                      <ul class="nav flex-column">
+                        {%for skill in client.skills%}
+                        <li><a href="#">{{skill.name}}</a></li>
+                        {%endfor%}
+                      </ul>
+                    </div>
+                    <div class="col-lg-6 mt70">
+                      <div class="section-item-title-xs section-item-title-xs-narrow mb35"><strong>Projects</strong>
+                      </div>
+                      <ul class="nav flex-column">
+                        {%for project in client.projects.all%}
+                        <li><a href="{%url 'project' project.slug%}">{{project.name}}</a></li>
+                        {%endfor%}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {%endfor%}
+            </div>
+          </div>
+        </div>
+        <div class="section-item text-left">
+          <div class="container pt-5">
+            <h4 class="mt10 mb20 font-libre">My Approach</h4>
+            <div class="fs20 lh-lg2 text-grey">I love to work side by side with ambitious perfectionist and
+              challenge-loving clients</div>
+            <div class="progress-list mt50">
+              <div class="progress-item wow fadeInRight" data-wow-delay=".2s">
+                <div class="row">
+                  <div class="col-sm-3">
+                    <div class="progress-item-num font-libre">1.</div>
+                  </div>
+                  <div class="col-sm-9">
+                    <div class="progress-item-title">Partnership</div>
+                    <div class="fs18 text-grey">I believe in development partnership and co-creation. I like to discuss,
+                      plan and be a part of your team. Only sharing same vision can achieve great results.</div>
+                  </div>
+                </div>
+              </div>
+              <div class="progress-item wow fadeInRight" data-wow-delay=".2s">
+                <div class="row">
+                  <div class="col-sm-3">
+                    <div class="progress-item-num font-libre">2.</div>
+                  </div>
+                  <div class="col-sm-9">
+                    <div class="progress-item-title">Closeness</div>
+                    <div class="fs18 text-grey">I work closely and listen to my clients. I carefully research them to
+                      understand their story.</div>
+                  </div>
+                </div>
+              </div>
+              <div class="progress-item wow fadeInRight" data-wow-delay=".2s">
+                <div class="row">
+                  <div class="col-sm-3">
+                    <div class="progress-item-num font-libre">3.</div>
+                  </div>
+                  <div class="col-sm-9">
+                    <div class="progress-item-title">Future</div>
+                    <div class="fs18 text-grey">I believe in strong and continuos relationships. I aim to become a
+                      trusted partner of my clients, not just a service provider.</div>
+                  </div>
+                </div>
+              </div>
+              <div class="progress-item wow fadeInRight" data-wow-delay=".2s">
+                <div class="row">
+                  <div class="col-sm-3">
+                    <div class="progress-item-num font-libre">4.</div>
+                  </div>
+                  <div class="col-sm-9">
+                    <div class="progress-item-title">Commitment</div>
+                    <div class="fs18 text-grey">I commit to clients with international standards, time efficiency,
+                      production, and highly maintainable products.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {%include "_footer.html"%}
+
+  </div>
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="{%static 'js/smoothscroll.js' %}"></script>
+  <script src="{%static 'js/popper.min.js' %}"></script>
+  <script src="{%static 'js/bootstrap.min.js' %}"></script>
+  <script src="{%static 'js/animsition.min.js' %}"></script>
+  <script src="{%static 'js/owl.carousel.min.js' %}"></script>
+  <script src="{%static 'js/wow.min.js' %}"></script>
+  <script src="{%static 'js/jquery.pagepiling.min.js' %}"></script>
+  <script src="{%static 'js/isotope.pkgd.min.js' %}"></script>
+  <script src="{%static 'js/jquery.fancybox.min.js' %}"></script>
+  <script src="{%static 'js/TweenMax.min.js' %}"></script>
+  <script src="{%static 'js/ScrollMagic.min.js' %}"></script>
+  <script src="{%static 'js/animation.gsap.min.js' %}"></script>
+  <script src="{%static 'js/jquery.viewport.js' %}"></script>
+  <script src="{%static 'js/jquery.countdown.min.js' %}"></script>
+  <script src="{%static 'js/script.js' %}"></script>
+  <script>
+    $(document).ready(function () {
+      // init controller
+      var controller = new ScrollMagic.Controller();
+
+      // build scenes
+      new ScrollMagic.Scene({ triggerElement: '.parallax-start', triggerHook: 0, duration: '100%' })
+        .setTween('.full-image-dark', { backgroundPosition: '50% 100%', ease: Linear.easeNone })
+        .addTo(controller);
+
+
+    });
+  </script>
+</body>
+
+</html>

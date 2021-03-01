@@ -1,0 +1,285 @@
+{% load icon %}
+{%load static%}
+{%include "_header.html"%}
+
+<body class="theme-orange dark-horizontal">
+  <style>
+    .list-background {
+      background-color: transparent !important;
+    }
+  </style>
+  <div class="animsition">
+    <div class="wrapper">
+      {%include "_nav.html"%}
+      {%include "_social.html"%}
+      <div class="home-horizontal a-horizontal full-height">
+        <div class="section pp-scrollable slide slide1 slide-dark">
+          <div class="slide-container">
+            <!-- <div class="video-container a-video" data-vimeo-width="640" data-vimeo-height="360"><iframe
+                src="https://player.vimeo.com/video/253112375?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;autopause=0&amp;muted=1&amp;background=1"
+                allowfullscreen></iframe></div> -->
+            <div class="slide-bg">
+              <div class="inside"></div>
+            </div>
+            <div class="slide-video-container slide-container">
+              <div class="container">
+                <div class="row slide-content">
+                  <div class="col-sm-4">
+                    <div class="slide-num num">01</div>
+                    <h1 class="slide-title font-teko wow fadeInRight" data-wow-duration="1.2s"><span
+                        class="text-primary">Hesbon</span><br /> Software<br /> Engineer</h1>
+                    <div class="slide-body wow fadeInRight" data-wow-delay=".2s" data-wow-duration="1.2s">
+                      <h3 class="slide-title-sub font-teko">backend, frontend &amp; devops</h3>
+                      <div class="slide-descr"> <i>{% icon "terminal"%}</i> &nbsp;<i>The big optimizations come from refining the high-level design, not the
+                        individual routines</i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- <button class="btn-play a-video-play"><i class="icon ion-ios-play"></i></button> -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section pp-scrollable slide slide2 slide-dark">
+          <div class="slide-bg">
+            <div class="inside"></div>
+          </div>
+          <div class="slide-container">
+            <div class="container">
+              <div class="slide-num num">02</div>
+              <div class="media-title">
+                <div class="align-self-center">
+                  <h2 class="slide-title font-teko mb-0">My Services</h2>
+                </div>
+                <div class="align-self-center mb-2">
+                  <!-- <div class="slide-descr slide-note">When unknow printer took a galley of type and scrambled it<br />
+              to make a type specimen book.</div> -->
+                </div>
+              </div>
+              <div class="slide-body">
+                <div class="row horizontal-service-list">
+                  <div class="col-lg-4 col-sm-2">
+                    <div class="horizontal-service-item">
+                      <div class="num">1.</div>
+                      <div class="horizontal-service-item-photo"><img src="{%static 'img/horizontal-pic2.png' %}" alt=""
+                          class="photo-position" /></div>
+                      <div class="horizontal-service-item-title">Backend &amp;<br />Development</div>
+                      <div class="horizontal-service-item-descr text-white">
+                        <ul class="list-group border-0 m-0 p-0">
+                          <li class="list-group-item border-0 m-0 p-0 list-background"><i>
+                              {% icon "check" class="text-success" %}</i> Python</li>
+                          <li class="list-group-item border-0 m-0 p-0 list-background"><i>
+                              {% icon "check" class="text-success" %}</i> Django (Django, Graphene, DRF) </li>
+                          <li class="list-group-item border-0 m-0 p-0 list-background"><i>
+                              {% icon "check" class="text-success" %}</i> Flask (RESTPlus, RESTFul) </li>
+                          <li class="list-group-item border-0 m-0 p-0 list-background"><i>
+                              {% icon "check" class="text-success" %}</i> FastAPI</li>
+                        </ul>
+                      </div>
+                      <div class="horizontal-service-item-more"><a class="btn btn-primary btn-sm"
+                          href="{%url 'projects'%}">Learn
+                          more <i class="icon ion-ios-arrow-right"></i></a></div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-sm-2">
+                    <div class="horizontal-service-item">
+                      <div class="num">2.</div>
+                      <div class="horizontal-service-item-photo"><img src="{%static 'img/horizontal-pic3.png' %}" alt=""
+                          class="photo-position" /></div>
+                      <div class="horizontal-service-item-title">Frontend &amp;<br /> Development</div>
+                      <div class="horizontal-service-item-descr text-white">
+                        <ul class="list-group border-0 m-0 p-0">
+                          <li class="list-group-item border-0 m-0 p-0 list-background"><i>
+                              {% icon "check" class="text-success" %}</i> HTML, CSS</li>
+                          <li class="list-group-item border-0 m-0 p-0 list-background"><i>
+                              {% icon "check" class="text-success" %}</i> JavaScript</li>
+                          <li class="list-group-item border-0 m-0 p-0 list-background"><i>
+                              {% icon "check" class="text-success" %}</i> React (React Apollo, React Redux) </li>
+                          <li class="list-group-item border-0 m-0 p-0 list-background"><i>
+                              {% icon "check" class="text-success" %}</i> Context API</li>
+                        </ul>
+                      </div>
+                      <div class="horizontal-service-item-more"><a class="btn btn-primary btn-sm"
+                          href="{%url 'projects'%}">Learn
+                          more <i class="icon ion-ios-arrow-right"></i></a></div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-sm-2">
+                    <div class="horizontal-service-item">
+                      <div class="num">3.</div>
+                      <div class="horizontal-service-item-photo photo3"><img src="{%static 'img/horizontal-pic4.png' %}"
+                          alt="" class="photo-position" /></div>
+                      <div class="horizontal-service-item-title">Development<br /> Operations</div>
+                      <div class="horizontal-service-item-descr text-white">
+                        <ul class="list-group border-0 m-0 p-0">
+                          <li class="list-group-item border-0 m-0 p-0 list-background"><i>
+                              {% icon "check" class="text-success" %}</i></i> Docker</i>
+                          <li class="list-group-item border-0 m-0 p-0 list-background"><i>
+                              {% icon "check" class="text-success" %}</i></i> Kubernetes</i>
+                          <li class="list-group-item border-0 m-0 p-0 list-background"><i>
+                              {% icon "check" class="text-success" %}</i></i> CI (Continuous Integration) </i>
+                          <li class="list-group-item border-0 m-0 p-0 list-background"><i>
+                              {% icon "check" class="text-success" %}</i></i> CD (Continuous Deployment) </i>
+                        </ul>
+                      </div>
+                      <div class="horizontal-service-item-more"><a class="btn btn-primary btn-sm"
+                          href="{%url 'projects'%}">Learn
+                          more <i class="icon ion-ios-arrow-right"></i></a></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section pp-scrollable slide slide3 slide-dark">
+          <div class="slide-container">
+            <div class="slide-bg">
+              <div class="inside"></div>
+            </div>
+            <div class="container">
+              <div class="row slide-content">
+                <div class="col-sm-4">
+                  <div class="slide-num num">03</div>
+                  <div class="slide-title">
+                    <div class="horizontal-top-title">Featured project</div>
+                    <h2 class="font-teko h1">Oreo<br /> Hotels</h2>
+                  </div>
+                  <div class="slide-body">
+                    <h3 class="slide-title-sub font-teko">Hotel Recommender</h3>
+                  </div>
+                </div>
+              </div>
+              <a class="btn btn-primary mr-4" href="{% url 'project' 'oreo-hotels' %}">See project <i
+                  class="icon ion-ios-arrow-right"></i></a>
+              <a href="{% url 'projects' %}" class="horizontal-more-total">all project</a>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="section pp-scrollable slide slide4">
+    <div class="slide-container">
+      <div class="container">
+        <div class="slide-num num">04</div>
+        <div class="media-title">
+          <div class="align-self-center">
+            <h2 class="slide-title font-teko mb-0">Our Clients</h2>
+          </div>
+          <div class="align-self-center mb-2">
+            <div class="slide-descr slide-note">Help business can be optimized profit and improve value<br /> of
+              brand is our vision.</div>
+          </div>
+        </div>
+        <div class="slide-body">
+          <div class="row no-gutters partner-list partner-bordered">
+            <div class="col partner-item"><span class="inside"><img src="{% static 'img/pic12.png' %}" alt="" /></span>
+            </div>
+            <div class="col partner-item"><a href="#" class="inside"><img src="{% static 'img/pic13.png' %}"
+                  alt="" /></a></div>
+            <div class="col partner-item"><a href="#" class="inside"><img src="{% static 'img/pic14.png' %}"
+                  alt="" /></a></div>
+            <div class="col partner-item"><a href="#" class="inside"><img src="{% static 'img/pic15.png' %}"
+                  alt="" /></a></div>
+            <div class="col partner-item"><a href="#" class="inside"><img src="{% static 'img/pic16.png' %}"
+                  alt="" /></a></div>
+            <div class="col partner-item"><a href="#" class="inside"><img src="{% static 'img/pic17.png' %}"
+                  alt="" /></a></div>
+            <div class="col partner-item"><a href="#" class="inside"><img src="{% static 'img/pic18.png' %}"
+                  alt="" /></a></div>
+            <div class="col partner-item"><a href="#" class="inside"><img src="{% static 'img/pic20.png' %}"
+                  alt="" /></a></div>
+            <div class="col partner-item"><a href="#" class="inside"><img src="{% static 'img/pic21.png' %}"
+                  alt="" /></a></div>
+            <div class="col partner-item"><a href="#" class="inside"><img src="{% static 'img/pic22.png' %}"
+                  alt="" /></a></div>
+            <div class="col partner-item"><a href="#" class="inside"><img src="{% static 'img/pic23.png' %}"
+                  alt="" /></a></div>
+            <div class="col partner-item"><a href="#" class="inside"><img src="{% static 'img/pic24.png' %}"
+                  alt="" /></a></div>
+            <div class="col partner-item"><a href="#" class="inside"><img src="{% static 'img/pic25.png' %}"
+                  alt="" /></a></div>
+            <div class="col partner-item"><a href="#" class="inside"><img src="{% static 'img/pic26.png' %}"
+                  alt="" /></a></div>
+            <div class="col partner-item"><a href="#" class="inside"><img src="{% static 'img/pic27.png' %}"
+                  alt="" /></a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+        <div class="section pp-scrollable slide slide5 slide-dark">
+          <div class="slide-container">
+            <div class="slide-bg">
+              <div class="inside"></div>
+            </div>
+            <div class="container">
+              <div class="row slide-content">
+                <div class="col-sm-6">
+                  <div class="slide-num num">04</div>
+                  <h2 class="slide-title font-teko h1"><span class="text-primary">Nairobi,</span> Kenya</h2>
+                  <div class="slide-body">
+                    <div class="slide-contact-address">....</div>
+                    <div class="slide-contact-mail"><a target="_blank" class="underline"
+                        href="mailto:hesbonkiptoo5600@gmail.com" class="mail-link"><span
+                          class="__cf_email__">hesbonkiptoo5600@gmail.com</span></a>
+                    </div>
+                    <div class="slide-contact-phone"><a href="tel:+254727737299" class="phone-link">+2547 2773 7299</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <a class="btn btn-primary mr-4" href="{%url 'contact'%}">Contact Me <i
+                  class="icon ion-ios-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {%include "_scripts.html"%}
+  <script>
+    $(document).ready(function () {
+      $('.a-horizontal').pagepiling({
+        scrollingSpeed: 280,
+        menu: '#menu',
+        direction: 'horizontal',
+        loopTop: true,
+        loopBottom: true,
+        anchors: ['Home', 'Services', 'Projects', 'Contacts'],
+        navigation: false,
+        afterLoad: function (anchorLink, index) {
+          if (index == 1 || index == 3 || index == 4 || index == 2) { // Section with dark bacgkrounds
+            $('body').addClass('dark-horizontal');
+          }
+          else {
+            $('body').removeClass('dark-horizontal');
+          }
+        }
+      });
+
+      $('.a-pp-prev').on('click', function () {
+        $.fn.pagepiling.moveSectionUp();
+      });
+      $('.a-pp-next').on('click', function () {
+        $.fn.pagepiling.moveSectionDown();
+      });
+    });
+  </script>
+  <script>
+    $(document).ready(function () {
+      // init controller
+      var controller = new ScrollMagic.Controller();
+
+      // build scenes
+      new ScrollMagic.Scene({ triggerElement: '.parallax-start', triggerHook: 0, duration: '100%' })
+        .setTween('.full-image-dark', { backgroundPosition: '50% 100%', ease: Linear.easeNone })
+        .addTo(controller);
+
+
+    });
+  </script>
+
+
+</body>
+
+</html>
