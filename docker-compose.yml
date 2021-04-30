@@ -44,6 +44,7 @@ services:
     environment:
       - DB_USER=${DB_USER}
       - DB_PASSWORD=${DB_PASSWORD}
+      - DEBUG=${DEBUG}
       - DB_NAME=${DB_NAME}
       - DB_HOST=database
       - SECRET_KEY=${SECRET_KEY}
@@ -54,7 +55,6 @@ services:
       - EMAIL_HOST=${EMAIL_HOST}
       - EMAIL_HOST_PASSWORD=${EMAIL_HOST_PASSWORD}
       - TO_EMAIL=${TO_EMAIL}
-
 
   proxy:
     image: portfolio-nginx
