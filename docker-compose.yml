@@ -73,8 +73,8 @@ services:
     restart: always
 
     environment:
-      - VIRTUAL_HOST=meshack.design
-      - LETSENCRYPT_HOST=meshack.design
+      - VIRTUAL_HOST=hesbon.me
+      - LETSENCRYPT_HOST=hesbon.me
       - VIRTUAL_PORT=81
 
 
