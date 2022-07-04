@@ -1,9 +1,10 @@
 #!/bin/bash
 
-# source /root/.local/share/virtualenvs/portfolio-*/bin/activate
+source /root/.local/share/virtualenvs/portfolio-*/bin/activate
 
 echo "<<<<<<<< Collect Staticfiles>>>>>>>>>"
 python manage.py collectstatic --noinput
+
 
 sleep 14
 echo "<<<<<<<< Database Setup and Migrations Starts >>>>>>>>>"
