@@ -23,7 +23,7 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
           script: |
-            cd cd /home/deployer/portfolio/
+            cd /home/deployer/portfolio/
             git fetch
             git reset --hard origin/main
             export DB_USER=${{ secrets.DB_USER}}
