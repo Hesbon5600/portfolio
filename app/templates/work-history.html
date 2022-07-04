@@ -57,8 +57,8 @@
               <div class="service-promo-item row no-gutters wow {{client.fade_style}}" data-wow-delay=".2s"
                 data-wow-offset="150">
                 <div class="col-sm-4 {{client.description_style}} service-promo-item-photo"
-                  style="background-image: url({%static 'img/'|add:client.background_image_url%});">
-                  <img src="{%static 'img/'|add:client.background_image_url%}" alt="" class="img-fluid d-sm-none">
+                  style="background-image: url({{client.background_image_url}});">
+                  <img src="{{client.background_image_url}}" alt="" class="img-fluid d-sm-none">
                 </div>
                 <div class="col-sm-8 service-promo-item-detail">
                   <div class="service-promo-item-title">{{client.name}}</div>

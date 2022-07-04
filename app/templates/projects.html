@@ -62,7 +62,7 @@
                             data-wow-delay=".2s">
                             <a href="{%url 'project' project.slug %}" class="project-item">
                                 <div class="project-carousel-photo"
-                                    style="background-image:url({%static 'img/'|add:project.thumbnail_image_url %})">
+                                    style="background-image:url({{project.thumbnail_image_url}})">
                                 </div>
                                 <div class="project-carousel-date text-black">{{project.completion_date|date:"Y"}}</div>
                                 <div class="project-carousel-detail">
